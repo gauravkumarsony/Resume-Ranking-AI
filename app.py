@@ -307,28 +307,7 @@ st.markdown(get_css(), unsafe_allow_html=True)
 # Function to toggle theme
 def toggle_theme():
     st.session_state.theme = 'light' if st.session_state.theme == 'dark' else 'dark'
-    
 
-# Title and theme toggle
-col1, col2 = st.columns([3, 1])
-with col1:
-    st.markdown("""
-<div class="header">
-    <h1>Resume Screening <span style="color: #5DA0F6;">AI</span></h1>
-</div>
-""", unsafe_allow_html=True)
-with col2:
-    st.button(
-        "🌙" if st.session_state.theme == 'light' else "☀️",
-        on_click=toggle_theme,
-        key="theme_toggle"
-    )
-
-st.markdown("""
-<div class="disc">
-    <p>Find the perfect candidates effortlessly. Upload job descriptions and resumes to get AI-powered rankings.</p>
-</div>
-""", unsafe_allow_html=True)
 # Function to extract text from PDF
 def extract_text_from_pdf(pdf_file):
     pdf_reader = PyPDF2.PdfReader(pdf_file)
@@ -393,7 +372,28 @@ common_skills = ['Python', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Java
     'Scientific Computing', 'Computational Physics', 'Bioinformatics',
     'Game Development', 'Unity', 'Unreal Engine', 'WebGL',
     'Embedded Systems', 'IoT', 'Robotics', 'Hardware', 'Firmware']
+  
 
+# Title and theme toggle
+col1, col2 = st.columns([3, 1])
+with col1:
+    st.markdown("""
+<div class="header">
+    <h1>Resume Screening <span style="color: #5DA0F6;">AI</span></h1>
+</div>
+""", unsafe_allow_html=True)
+with col2:
+    st.button(
+        "🌙" if st.session_state.theme == 'light' else "☀️",
+        on_click=toggle_theme,
+        key="theme_toggle"
+    )
+
+st.markdown("""
+<div class="disc">
+    <p>Find the perfect candidates effortlessly. Upload job descriptions and resumes to get AI-powered rankings.</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Job Description
 st.markdown("""
