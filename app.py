@@ -163,7 +163,8 @@ def get_css():
         .about {
         text-align: center;
         padding: 20px; 
-        margin-top: 50px; 
+        margin-top: 50px;
+        border: 1px solid white !important; 
         background: rgba(255, 255, 255, 0.1); 
         border-radius: 10px;
         }
