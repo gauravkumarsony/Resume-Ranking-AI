@@ -64,9 +64,22 @@ def get_css():
         }
         .stFileUploader {
             background-color: #2D2D3F !important;
-            color: #101E36;
+            color: white;
             border-radius: 10px;
             padding: 10px;
+        }
+        .subheader {
+            color: white;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            
+        }
+        .subheader h3{
+            color: white;
+            background-color: #5DA0F6; !important;
+            border-radius: 10px;
+            padding: 10px;
+            
         }
         .stMarkdown {
             color: #FFFFFF;
@@ -118,6 +131,11 @@ def get_css():
             line-height: 1.5;
             margin-top: 10px;
         }
+        .custom-divider {
+            border-top: 5px solid #33FF57; /* Green for dark mode */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
         .match-score {
             font-size: 2rem;
             font-weight: bold;
@@ -163,18 +181,45 @@ def get_css():
              color: #101E36;
         }
         .stFileUploader {
-            background-color: #2D2D3F !important;
-            color: #101E36;
+            background-color: #2D2D3F; !important;
+            color: white;
             border-radius: 10px;
             padding: 10px;
+        }
+        /* Light mode filename styling */
+        .file-name {
+            font-size: 18px !important;
+            font-weight: bold !important;
+            color: #2E86C1 !important; /* Blue */
+            background-color: #F8F9F9 !important;
+            padding: 5px 10px !important;
+            border-radius: 5px !important;
+            display: inline-block;
         }
         .stMarkdown {
             color: #101E36;
             border-radius: 10px;
             
         }
+        .custom-divider {
+            border: none;
+            background-color: grey !important; /* Green */
+            width: 100%;
+            height: 2px; /* Thicker for better visibility */
+            margin: 20px 0;
+
+        }
         .subheader {
             color: #101E36;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            
+        }
+        .subheader h3{
+            color: white;
+            background-color: #5DA0F6; !important;
+            border-radius: 10px;
+            padding: 10px;
             
         }
         .card {
@@ -384,7 +429,11 @@ if process_button and job_description and uploaded_files:
         
         results.sort(key=lambda x: x["match_score"], reverse=True)
         
-        st.subheader("Resume Ranking Results")
+        st.markdown("""
+<div class="subheader">
+    <h3>Resume Ranking Results</h3>
+</div>
+""", unsafe_allow_html=True)
         for i, result in enumerate(results):
             col1, col2 = st.columns([3, 1])
             with col1:
@@ -398,7 +447,7 @@ if process_button and job_description and uploaded_files:
                     st.markdown(skill_tags, unsafe_allow_html=True)
                 else:
                     st.markdown("_No matching skills found._")
-            st.divider()
+            st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
 
 # Add instructions/help at the bottom
 with st.expander("How to use this tool"):
