@@ -77,8 +77,10 @@ def get_css():
         font-weight: bold;
         font-size: 16px;
         }
-        .subheader h3{
+       .subheader h3{
             color: white;
+            margin-top: 20px;
+            margin-bottom: 30px !important;
             background-color: #5DA0F6; !important;
             border-radius: 10px;
             padding: 10px;  
