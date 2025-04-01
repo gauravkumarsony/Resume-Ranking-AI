@@ -16,6 +16,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 import textwrap
 
+
 # Initialize session state for theme
 if 'theme' not in st.session_state:
     st.session_state.theme = 'light'
@@ -35,7 +36,6 @@ def add_bg_from_local(image_file):
     """
     st.markdown(bg_image, unsafe_allow_html=True)
 
-
 # CSS for styling based on theme
 def get_css():
     if st.session_state.theme == 'dark':
@@ -52,11 +52,36 @@ def get_css():
             color: #FFFFFF !important;
             border-color: #3D3D4F !important;
         }
+        .header {
+             border: 1px solid white !important;
+             text-align: center;
+             padding: 5px;
+             border-radius: 20px;
+             margin-top: 20px; 
+             margin-bottom: 20px;
+             background: rgba(255, 255, 255, 0.1);
+        }
+         .disc p { 
+        background-color: #5DA0F6;
+        border-radius: 10px;
+        padding: 2px;
+        }
         .stTextArea {
         background-color: #2D2D3F !important;
             color: #101E36;
             border-radius: 10px;
             padding: 10px;
+        }
+        div.stTextArea > label {
+        color: white !important;  /* Change the color */
+        font-weight: bold;
+        font-size: 16px;
+        }
+        .subheader h3{
+            color: white;
+            background-color: #5DA0F6; !important;
+            border-radius: 10px;
+            padding: 10px;  
         }
         .stButton>button {
             background-color: #5DA0F6;
@@ -68,18 +93,10 @@ def get_css():
             border-radius: 10px;
             padding: 10px;
         }
-        .subheader {
-            color: white;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            
-        }
-        .subheader h3{
-            color: white;
-            background-color: #5DA0F6; !important;
-            border-radius: 10px;
-            padding: 10px;
-            
+        div.stFileUploader > label {
+        color: white !important;  /* Change the color */
+        font-weight: bold;
+        font-size: 16px;
         }
         .stMarkdown {
             color: #FFFFFF;
@@ -106,7 +123,7 @@ def get_css():
         border-radius: 15px;
         font-size: 14px;
         font-weight: bold;
-    }
+        }
        /* Styling for Expander */
         details {
             background-color: #252542;
@@ -115,7 +132,7 @@ def get_css():
             padding: 10px;
             box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
             font-size: 16px;
-        }
+            }
         summary {
             font-size: 18px;
             font-weight: bold;
@@ -130,16 +147,16 @@ def get_css():
             font-size: 16px;
             line-height: 1.5;
             margin-top: 10px;
-        }
-        .custom-divider {
-            border-top: 5px solid #33FF57; /* Green for dark mode */
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+            }
         .match-score {
             font-size: 2rem;
             font-weight: bold;
             color: #5DA0F6;
+        }
+        .custom-divider {
+            border-top: 2px solid white !important; /* White for dark mode */
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         .about {
         text-align: center;
@@ -173,54 +190,46 @@ def get_css():
         border-radius: 10px;
         padding: 10px;
         }
+        div.stTextArea > label {
+        color: white !important;  /* Change the color */
+        font-weight: bold;
+        font-size: 16px;
+        }
         .stButton>button {
             background-color: #5DA0F6;
             color: white;
         }
         .header {
-             color: #101E36;
+             border: 1px solid black !important;
+             text-align: center;
+             padding: 5px;
+             border-radius: 20px;
+             margin-top: 20px; 
+             margin-bottom: 20px;
+             background: rgba(0, 0, 0, 0.1);
         }
         .stFileUploader {
-            background-color: #2D2D3F; !important;
+            background-color: #2D2D3F !important;
             color: white;
             border-radius: 10px;
             padding: 10px;
-        }
-        /* Light mode filename styling */
-        .file-name {
-            font-size: 18px !important;
-            font-weight: bold !important;
-            color: #2E86C1 !important; /* Blue */
-            background-color: #F8F9F9 !important;
-            padding: 5px 10px !important;
-            border-radius: 5px !important;
-            display: inline-block;
-        }
+            }
         .stMarkdown {
             color: #101E36;
             border-radius: 10px;
-            
-        }
-        .custom-divider {
-            border: none;
-            background-color: grey !important; /* Green */
-            width: 100%;
-            height: 2px; /* Thicker for better visibility */
-            margin: 20px 0;
-
-        }
+            }
         .subheader {
             color: #101E36;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            
+            margin-top: 20px;
+            margin-bottom: 10px;  
         }
         .subheader h3{
             color: white;
+            margin-top: 20px;
+            margin-bottom: 30px !important;
             background-color: #5DA0F6; !important;
             border-radius: 10px;
-            padding: 10px;
-            
+            padding: 10px;  
         }
         .card {
             background-color: #2D2D3F;
@@ -235,6 +244,8 @@ def get_css():
             color: black;
             border-radius: 10px;
             padding: 10px;
+            margin-top: 20px !important; 
+            margin-bottom: 20px !important; 
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             font-size: 16px;
         }
@@ -263,6 +274,11 @@ def get_css():
         font-size: 14px;
         font-weight: bold;
         } 
+        div.stFileUploader > label {
+        color: white !important;  /* Change the color */
+        font-weight: bold;
+        font-size: 16px;
+        }
         .card-title {
             font-size: 1.2rem;
             color: white;
@@ -290,12 +306,21 @@ def get_css():
         border-radius: 15px;
         font-size: 14px;
         font-weight: bold;
-    }
+        }
+        .custom-divider {
+            border: none;
+            background-color: grey !important; 
+            width: 100%;
+            height: 2px; /* Thicker for better visibility */
+            margin: 20px 0;
+        }
         .about {
         text-align: center;
         padding: 20px; 
-        margin-top: 50px; 
-        background-color: #2D2D3F;
+        color: black;
+        border: 1px solid black !important;
+        margin-top: 40px; 
+        background: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         }
         </style>
@@ -307,6 +332,28 @@ st.markdown(get_css(), unsafe_allow_html=True)
 # Function to toggle theme
 def toggle_theme():
     st.session_state.theme = 'light' if st.session_state.theme == 'dark' else 'dark'
+    
+
+# Title and theme toggle
+col1, col2 = st.columns([3, 1])
+with col1:
+    st.markdown("""
+<div class="header">
+    <h1>Resume Screening <span style="color: #5DA0F6;">AI</span></h1>
+</div>
+""", unsafe_allow_html=True)
+with col2:
+    st.button(
+        "🌙" if st.session_state.theme == 'light' else "☀️",
+        on_click=toggle_theme,
+        key="theme_toggle"
+    )
+
+st.markdown("""
+<div class="disc">
+    <p>Find the perfect candidates effortlessly. Upload job descriptions and resumes to get AI-powered rankings.</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Function to extract text from PDF
 def extract_text_from_pdf(pdf_file):
@@ -372,28 +419,7 @@ common_skills = ['Python', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Java
     'Scientific Computing', 'Computational Physics', 'Bioinformatics',
     'Game Development', 'Unity', 'Unreal Engine', 'WebGL',
     'Embedded Systems', 'IoT', 'Robotics', 'Hardware', 'Firmware']
-  
 
-# Title and theme toggle
-col1, col2 = st.columns([3, 1])
-with col1:
-    st.markdown("""
-<div class="header">
-    <h1>Resume Screening <span style="color: #5DA0F6;">AI</span></h1>
-</div>
-""", unsafe_allow_html=True)
-with col2:
-    st.button(
-        "🌙" if st.session_state.theme == 'light' else "☀️",
-        on_click=toggle_theme,
-        key="theme_toggle"
-    )
-
-st.markdown("""
-<div class="disc">
-    <p>Find the perfect candidates effortlessly. Upload job descriptions and resumes to get AI-powered rankings.</p>
-</div>
-""", unsafe_allow_html=True)
 
 # Job Description
 st.markdown("""
@@ -401,18 +427,21 @@ st.markdown("""
     <h2>Job Description</h2>
 </div>
 """, unsafe_allow_html=True)
-job_description = st.text_area("Enter the job description here:", height=200)
 
+job_description = st.text_area("Enter the job description here:", height=200)
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
 # Resume Upload
 st.markdown("""
 <div class="subheader">
     <h2>Upload Resumes(PDF)</h2>
 </div>
 """, unsafe_allow_html=True)
+
 uploaded_files = st.file_uploader("Upload one or more resumes (PDF format)", accept_multiple_files=True, type=['pdf'])
 
 # Process button
 process_button = st.button("Rank Resumes")
+st.markdown('<hr class="custom-divider">', unsafe_allow_html=True)
 
 if process_button and job_description and uploaded_files:
     with st.spinner("Analyzing resumes..."):
@@ -430,10 +459,11 @@ if process_button and job_description and uploaded_files:
         results.sort(key=lambda x: x["match_score"], reverse=True)
         
         st.markdown("""
-<div class="subheader">
-    <h3>Resume Ranking Results</h3>
-</div>
-""", unsafe_allow_html=True)
+            <div class="subheader">
+                <h3>Resume Ranking Results</h3>
+            </div>
+            """, unsafe_allow_html=True)
+        
         for i, result in enumerate(results):
             col1, col2 = st.columns([3, 1])
             with col1:
@@ -464,8 +494,8 @@ with st.expander("How to use this tool"):
 # Footer with additional information
 st.markdown("""
     <div class="about">
-    <h2 style="color: white;">About This Tool</h2>
-    <p style="color: white;"> 
+    <h2>About This Tool</h2>
+    <p> 
         Author: Gaurav Kumar <br>
         Technology: NLP, Machine Learning & Scikit-Learn <br>
         Model: Cosine Similarity & Bag-of-Words (BoW)
