@@ -140,7 +140,7 @@ def get_css():
             font-weight: bold;
             cursor: pointer;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #207599;
             color: white;
             border-radius: 5px;
             text-align: left;
@@ -256,7 +256,7 @@ def get_css():
             font-weight: bold;
             cursor: pointer;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #207599;
             color: white;
             border-radius: 5px;
             text-align: left;
