@@ -24,14 +24,20 @@ This project is an **AI-powered Resume Screening System** built using **Python**
 - **PyPDF2** 📄 (PDF Parsing)
 
 ## 📸 Screenshots
-### 🔹 Home Page
-![Home Page](screenshots/home.png)
+### 🔹 Home Page in Light Mode
+![Home Page](screenshots/homepage_lightmode.png)
+
+### 🔹 Home Page in Dark Mode
+![Home Page](screenshots/homepage_dark.png)
+
+### 🔹 expandible instruction
+![Home Page](screenshots/expandable_light.png)
 
 ### 🔹 Resume Upload & Analysis
-![Upload & Analyze](screenshots/upload.png)
+![Upload & Analyze](screenshots/uploading_light.png)
 
-### 🔹 Result & Ranking
-![Results](screenshots/results.png)
+### 🔹 Result & Ranking in Light Mode
+![Results](screenshots/result_light.png)
 
 ## 🚀 Installation & Setup
 ```bash
