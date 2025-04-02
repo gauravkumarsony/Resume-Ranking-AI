@@ -77,6 +77,6 @@ Want to improve this project? Contributions are welcome! 🙌
 ## ⭐ Support the Project!
 If you find this project helpful, please consider **giving it a star ⭐** and **forking the repo 🍴**.
 
-[![GitHub stars](https://img.shields.io/github/stars/gauravkumarsony/Resume-Ranking-AI?style=social)](https://github.com/gauravkumarsony/resume-ranking-AI)
+[![GitHub stars](https://img.shields.io/github/stars/gauravkumarsony/Resume-Ranking-AI?style=social)](https://github.com/gauravkumarsony/Resume-Ranking-AI.git)
 
 🔔 **Follow me on GitHub** for more exciting projects! [Gaurav Kumar](https://github.com/gauravkumarsony) 💙
