@@ -30,8 +30,8 @@ This project is an **AI-powered Resume Screening System** built using **Python**
 ### 🔹 Home Page in Dark Mode
 ![Home Page](screenshots/homepage_dark.png)
 
-### 🔹 expandible instruction
-![Home Page](screenshots/expandable_light.png)
+### 🔹 Expandible Instruction
+![Home Page](screenshots/expendable_light.png)
 
 ### 🔹 Resume Upload & Analysis
 ![Upload & Analyze](screenshots/uploading_light.png)
@@ -42,10 +42,10 @@ This project is an **AI-powered Resume Screening System** built using **Python**
 ## 🚀 Installation & Setup
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/resume-screening-ai.git
+git clone https://github.com/gauravkumarsony/Resume-Ranking-AI.git
 
 # Navigate to project directory
-cd resume-screening-ai
+cd Resume-Ranking-AI
 
 # Create virtual environment
 python -m venv env
@@ -77,6 +77,6 @@ Want to improve this project? Contributions are welcome! 🙌
 ## ⭐ Support the Project!
 If you find this project helpful, please consider **giving it a star ⭐** and **forking the repo 🍴**.
 
-[![GitHub stars](https://img.shields.io/github/stars/gauravkumarsony/resume-screening-ai?style=social)](https://github.com/gauravkumarsony/resume-screening-ai)
+[![GitHub stars](https://img.shields.io/github/stars/gauravkumarsony/Resume-Ranking-AI?style=social)](https://github.com/gauravkumarsony/resume-ranking-AI)
 
 🔔 **Follow me on GitHub** for more exciting projects! [Gaurav Kumar](https://github.com/gauravkumarsony) 💙
